@@ -52,7 +52,7 @@
 
 ### !/bin/sh komutunu çalıştırıyoruz.
 
-![yetki3](https://github.com/nonamexishere/TryHackMe/assets/137460049/1b436565-5d69-4beb-bfe7-d760b375d27a)
+![yetki3](https://github.com/nonamexishere/TryHackMe/assets/137460049/9306bb8e-1146-4821-bf3f-1c5f8a064c80)
 
 ### Artık içerideyiz. Root flagimizi de alıp bu etapı sonlandırıyoruz. Buraya kadar takip ettiğiniz için teşekkürler.
 
