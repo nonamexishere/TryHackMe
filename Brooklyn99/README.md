@@ -3,60 +3,60 @@
 ## Bu CTF'de amacımız bir adet user flag ve bir adet root flag bulmak. Herkese iyi denemeler.
 ### Öncelikle nmap kullanarak bize verilen ip adresini taratıyoruz.
 
-![image](https://github.com/nonamexishere/THM-B99/assets/137460049/ec997f2e-f3b6-492a-9db8-1a7a6c7bde17)
+![nmap1](https://github.com/nonamexishere/TryHackMe/assets/137460049/53b4f557-adf1-4956-80fd-1b60f9fbef22)
 
-![image](https://github.com/nonamexishere/THM-B99/assets/137460049/d6c68d0c-3de5-4f3c-bd13-ec803f3c0bdf)
+![nmap2](https://github.com/nonamexishere/TryHackMe/assets/137460049/e9cb4636-97f4-4647-b664-992d25c827ee)
 
 ### Sonuçlar bize 21 ftp 22 ssh ve 80 http portlarının açık olduğunu söylüyor.
 ### Aynı zamanda görüldüğü üzere 21 ftp portuna Anonymous adıyla şifresiz giriş imkanımız var.
 
-![image](https://github.com/nonamexishere/THM-B99/assets/137460049/292b6453-99be-44fb-a582-6ae8c431aeae)
+![ftp1](https://github.com/nonamexishere/TryHackMe/assets/137460049/e19559c3-d1b1-4dc1-b862-88b8e57242bf)
 
 ### Anonymous kullanıcı adıyla şifreyi boş bırakıp içeri giriyoruz ve içerde txt dosyası bulunuyor.
 ### Ne yazıkki cat komutuyla bunu okuyamıyoruz. Bu yüzden get komutu kullanıp dosyayı indirelim.
 
-![image](https://github.com/nonamexishere/THM-B99/assets/137460049/ffbd9d54-d49f-4034-82b4-3773813529e4)
+![ftp2](https://github.com/nonamexishere/TryHackMe/assets/137460049/00d43865-78df-4443-bdc6-956421bcef68)
 
 ### Dosyayı indirdik şimdi içeriğine bakalım.
 
-![image](https://github.com/nonamexishere/THM-B99/assets/137460049/7c17a43d-8d6b-4a66-a02f-ceddaf3695d1)
+![ftp3](https://github.com/nonamexishere/TryHackMe/assets/137460049/2a3509a7-67d1-4690-963f-fc8f538e22c8)
 
 ### Burdan anlaşılabilceği üzere Jake diye bir kullanıcımız var ve şifresi zayıf. Yani bruteforce kullanabiliriz.
 
-![image](https://github.com/nonamexishere/THM-B99/assets/137460049/3dde7ce3-31a5-4178-8e50-3bd7acd0e6cc)
+![hydra1](https://github.com/nonamexishere/TryHackMe/assets/137460049/6cc0e83e-fe14-4b69-a985-50b4639b14a4)
 
 ### Hydra kullanarak saldırı başlatıyoruz. 
 
-![image](https://github.com/nonamexishere/THM-B99/assets/137460049/4c1a6a2b-ad18-4586-beed-1d15670e7038)
+![hydra2](https://github.com/nonamexishere/TryHackMe/assets/137460049/01dd277e-6e6a-4460-96b3-1fd34de87b76)
 
 ### Şifremizi elde ettik artık ssh ile içeri giriş yapabiliriz.
 ### Jake'in dizininde ls çalıştırıyoruz. Ancak çok fazla işe yarar bir şey bulamıyoruz.
 ### Home dizinine geçtikten sonra totalde 3 kullanıcı görüyoruz.
 
-![image](https://github.com/nonamexishere/THM-B99/assets/137460049/467ebfd9-3c58-47ec-bdb7-7922260311c0)
+![ssh1](https://github.com/nonamexishere/TryHackMe/assets/137460049/4d6ff192-b9e0-4663-933a-b5a6e0af5b21)
 
 ### Bunlardan holt klasörünün içinde user.txt isimli bir dosya buluyoruz ve içinde ilk flagimiz yer alıyor.
 
-![image](https://github.com/nonamexishere/THM-B99/assets/137460049/9eaf16eb-b617-4f38-a8d0-5d0abf59d59b)
+![ssh2](https://github.com/nonamexishere/TryHackMe/assets/137460049/6186e8b4-da08-4091-a33b-946ec75c8123)
 
 ### Evet, ilk flagimizi aldıktan sonra sıra geldi root flagi bulmaya.
 
-![image](https://github.com/nonamexishere/THM-B99/assets/137460049/dc625099-a246-4f23-9633-5445f8150164)
+![yetki1](https://github.com/nonamexishere/TryHackMe/assets/137460049/27f80496-c036-44e1-a9be-d993216bf668)
 
 ### Kullanabildiğimiz root komutu var mı diye sudo -l kullanıyoruz.
 ### Görüldüğü üzere less komutunu root olarak kullanabiliyoruz.
 ### less komutu normalde dosyaları okumak için kullanılır.
 ### Bunu lehimize kullanıp root olarak shell açabiliriz. Herhangi bir dosyayı less ile açıyoruz.
 
-![image](https://github.com/nonamexishere/THM-B99/assets/137460049/3fdb9c59-7330-4bf3-b9fc-686ac44cc018)
+![yetki2](https://github.com/nonamexishere/TryHackMe/assets/137460049/85edb2f4-cc64-4ac4-b3df-705364c4972a)
 
 ### !/bin/sh komutunu çalıştırıyoruz.
 
-![image](https://github.com/nonamexishere/THM-B99/assets/137460049/5ba16e8e-8a57-4973-aea5-3e927c172641)
+![yetki3](https://github.com/nonamexishere/TryHackMe/assets/137460049/1b436565-5d69-4beb-bfe7-d760b375d27a)
 
 ### Artık içerideyiz. Root flagimizi de alıp bu etapı sonlandırıyoruz. Buraya kadar takip ettiğiniz için teşekkürler.
 
-![image](https://github.com/nonamexishere/THM-B99/assets/137460049/dc295567-187f-4679-8015-252dcbb73ee3)
+![final](https://github.com/nonamexishere/TryHackMe/assets/137460049/eca96147-0c31-414e-b491-46450d5114de)
 
 ### Aşağıdaki alan cevapları içermektedir.
 ## |
