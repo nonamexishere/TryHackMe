@@ -58,20 +58,4 @@
 
 ![final](https://github.com/nonamexishere/TryHackMe/assets/137460049/eca96147-0c31-414e-b491-46450d5114de)
 
-### Aşağıdaki alan cevapları içermektedir.
-## |
-## |
-## |
-## |
-## |
-## |
-## |
-## |
-## |
-## |
-## |
-## |
-## User flag : ee11cbb19052e40b07aac0ca060c23ee
-## Root flag : 63a9f0ea7bb98050796b649e85481845
-
 
